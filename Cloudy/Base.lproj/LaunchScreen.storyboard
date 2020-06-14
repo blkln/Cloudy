@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +12,65 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-pJ-OcH" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02d" translatesAutoresizingMaskIntoConstraints="NO" id="InU-7o-04c">
+                                <rect key="frame" x="202.5" y="354.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="eUf-7a-Zf2"/>
+                                    <constraint firstAttribute="width" constant="100" id="s4V-Tc-th7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy:)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-Ut-1O9">
+                                <rect key="frame" x="112" y="424.5" width="190.5" height="57.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powered by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7Q-yK-cct">
+                                <rect key="frame" x="207" y="779" width="97.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="open_weather_logo" translatesAutoresizingMaskIntoConstraints="NO" id="dLx-nm-dIT">
+                                <rect key="frame" x="109.5" y="741" width="195" height="97"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dLx-nm-dIT" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.108259" id="5wf-gY-OpE"/>
+                            <constraint firstItem="WDx-pJ-OcH" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="66l-sy-GCJ"/>
+                            <constraint firstItem="WDx-pJ-OcH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="B04-Je-jbQ"/>
+                            <constraint firstItem="Syl-Ut-1O9" firstAttribute="trailing" secondItem="InU-7o-04c" secondAttribute="trailing" id="FS5-Sh-hcp"/>
+                            <constraint firstItem="I7Q-yK-cct" firstAttribute="leading" secondItem="dLx-nm-dIT" secondAttribute="centerX" id="MOp-ij-GIo"/>
+                            <constraint firstItem="dLx-nm-dIT" firstAttribute="trailing" secondItem="I7Q-yK-cct" secondAttribute="trailing" id="SDd-JY-W5D"/>
+                            <constraint firstItem="Syl-Ut-1O9" firstAttribute="top" secondItem="InU-7o-04c" secondAttribute="bottom" constant="-30" id="Vzb-wf-j0O"/>
+                            <constraint firstAttribute="top" secondItem="WDx-pJ-OcH" secondAttribute="top" id="Wn9-9d-KQo"/>
+                            <constraint firstItem="Syl-Ut-1O9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YyT-Oh-dKB"/>
+                            <constraint firstItem="I7Q-yK-cct" firstAttribute="centerY" secondItem="dLx-nm-dIT" secondAttribute="centerY" id="aj1-S1-jf2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dLx-nm-dIT" secondAttribute="bottom" constant="24" id="nKv-EF-M9U"/>
+                            <constraint firstItem="Syl-Ut-1O9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pfR-2w-P6n"/>
+                            <constraint firstItem="dLx-nm-dIT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pmx-vf-Y8T"/>
+                            <constraint firstItem="WDx-pJ-OcH" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="s1M-SF-MES"/>
+                            <constraint firstItem="dLx-nm-dIT" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.471014" id="ucB-jD-tKb"/>
+                            <constraint firstItem="WDx-pJ-OcH" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="znD-iM-Az5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="02d" width="50" height="50"/>
+        <image name="background" width="1296" height="1944"/>
+        <image name="open_weather_logo" width="431" height="184"/>
+    </resources>
 </document>
