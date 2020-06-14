@@ -12,6 +12,8 @@ class ForecastViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //register 'ForecastTableViewCell' to UICollectionView
+        tableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil), forCellReuseIdentifier: String(describing: ForecastTableViewCell.self))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

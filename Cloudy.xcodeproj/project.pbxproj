@@ -17,6 +17,10 @@
 		3EBB6EE72496645A0009B274 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6EE62496645A0009B274 /* PlacesViewController.swift */; };
 		3EBB6EE92496648D0009B274 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6EE82496648D0009B274 /* ForecastViewController.swift */; };
 		3EBB6EEB249665B20009B274 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6EEA249665B20009B274 /* Constants.swift */; };
+		3EBB6EF0249697DF0009B274 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6EEE249697DE0009B274 /* PlacesCollectionViewCell.swift */; };
+		3EBB6EF1249697DF0009B274 /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB6EEF249697DF0009B274 /* PlacesCollectionViewCell.xib */; };
+		3EBB6EF52496982C0009B274 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6EF32496982C0009B274 /* ForecastTableViewCell.swift */; };
+		3EBB6EF62496982C0009B274 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB6EF42496982C0009B274 /* ForecastTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		3EBB6EE62496645A0009B274 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3EBB6EE82496648D0009B274 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		3EBB6EEA249665B20009B274 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3EBB6EEE249697DE0009B274 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		3EBB6EEF249697DF0009B274 /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
+		3EBB6EF32496982C0009B274 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		3EBB6EF42496982C0009B274 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +91,28 @@
 				3EBB6ED2249657410009B274 /* MasterViewController.swift */,
 				3EBB6EE62496645A0009B274 /* PlacesViewController.swift */,
 				3EBB6EE82496648D0009B274 /* ForecastViewController.swift */,
+				3EBB6EF2249697E90009B274 /* PlacesCollectionViewCell */,
+				3EBB6EF7249698340009B274 /* ForecastTableViewCell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3EBB6EF2249697E90009B274 /* PlacesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB6EEE249697DE0009B274 /* PlacesCollectionViewCell.swift */,
+				3EBB6EEF249697DF0009B274 /* PlacesCollectionViewCell.xib */,
+			);
+			path = PlacesCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		3EBB6EF7249698340009B274 /* ForecastTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB6EF32496982C0009B274 /* ForecastTableViewCell.swift */,
+				3EBB6EF42496982C0009B274 /* ForecastTableViewCell.xib */,
+			);
+			path = ForecastTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +173,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBB6EF62496982C0009B274 /* ForecastTableViewCell.xib in Resources */,
+				3EBB6EF1249697DF0009B274 /* PlacesCollectionViewCell.xib in Resources */,
 				3EBB6EDE249657420009B274 /* LaunchScreen.storyboard in Resources */,
 				3EBB6EDB249657420009B274 /* Assets.xcassets in Resources */,
 				3EBB6ED6249657410009B274 /* Main.storyboard in Resources */,
@@ -158,11 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBB6EF0249697DF0009B274 /* PlacesCollectionViewCell.swift in Sources */,
 				3EBB6ED3249657410009B274 /* MasterViewController.swift in Sources */,
 				3EBB6ECF249657410009B274 /* AppDelegate.swift in Sources */,
 				3EBB6EE72496645A0009B274 /* PlacesViewController.swift in Sources */,
 				3EBB6ED1249657410009B274 /* SceneDelegate.swift in Sources */,
 				3EBB6EEB249665B20009B274 /* Constants.swift in Sources */,
+				3EBB6EF52496982C0009B274 /* ForecastTableViewCell.swift in Sources */,
 				3EBB6ED9249657410009B274 /* Cloudy.xcdatamodeld in Sources */,
 				3EBB6EE92496648D0009B274 /* ForecastViewController.swift in Sources */,
 			);

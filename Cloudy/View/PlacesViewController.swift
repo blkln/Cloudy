@@ -19,8 +19,10 @@ class PlacesViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
+        //register 'PlacesCollectionViewCell' to UICollectionView
+        collectionView.register(UINib(nibName: "PlacesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: String(describing: PlacesCollectionViewCell.self))
         // Do any additional setup after loading the view.
     }
 

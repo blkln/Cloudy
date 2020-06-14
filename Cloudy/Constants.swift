@@ -7,9 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     
+    struct Colors {
+        static let Orange = UIColor(red: 222, green: 128, blue: 99, alpha: 1.0)
+        static let Gray = UIColor(red: 90, green: 90, blue: 90, alpha: 1.0)
+    }
+
     enum Storyboard: String {
         case main = "Main"
     }
