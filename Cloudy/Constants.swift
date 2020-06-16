@@ -28,10 +28,20 @@ struct Constants {
     //MARK: - Networking
     static let APIKey = "f05519111df4ee763f1c0e3cf501f728"
     
+    enum Path: String {
+        case current = "weather"
+        case forecast = "forecast"
+    }
+    
     enum ContentType: String {
         case multipart = "multipart/form-data"
         case urlencoded = "application/x-www-form-urlencoded"
         case app_json = "application/json"
     }
 
+    enum APIError: String {
+        case connectionError = "Check your Internet connection"
+        case authorizationError = "Authorization Error"
+        case unknownError = "Unknown Error"
+    }
 }
