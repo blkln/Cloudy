@@ -44,9 +44,9 @@ struct CurrentWeatherData: Codable {
     let weather: [Weather]
     let main: Main
     let wind: Wind
-    let rain: Rain
+    let rain: Rain?
     let clouds: Clouds
-    let dt: Int
+    let dt: Double
     let sys: Sys
     
     enum CodingKeys: String, CodingKey {
@@ -82,7 +82,7 @@ struct Coord: Codable {
 
 // MARK: WeatherData
 struct WeatherData: Codable {
-    let dt: Int
+    let dt: Double
     let main: Main
     let weather: [Weather]
     let clouds: Clouds
@@ -155,6 +155,6 @@ struct Weather: Codable {
 // MARK: Wind
 struct Wind: Codable {
     let speed: Double
-    let deg: Int
+    let deg: Double
 }
 

@@ -27,10 +27,16 @@ struct Constants {
     
     //MARK: - Networking
     static let APIKey = "f05519111df4ee763f1c0e3cf501f728"
+    static let urlScheme = "https"
+    static let urlHost = "api.openweathermap.org"
+    //  Query parameters
+    static let appID = "appid"
+    static let query = "q"
+    static let units = "units"
     
     enum Path: String {
-        case current = "weather"
-        case forecast = "forecast"
+        case current = "/data/2.5/weather"
+        case forecast = "/data/2.5/forecast"
     }
     
     enum ContentType: String {
@@ -44,4 +50,13 @@ struct Constants {
         case authorizationError = "Authorization Error"
         case unknownError = "Unknown Error"
     }
+}
+
+enum Units: String {
+    case metric = "metric"
+    case imperial = "imperial"
+    case percent = "%"
+    case celcium = "℃"
+    case fahrenheit = "℉"
+    case pressure = "hPa"
 }

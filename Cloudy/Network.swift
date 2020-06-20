@@ -35,30 +35,21 @@ class Network {
         case serverUnavailable
     }
     
-    struct Query: Encodable {
-        let cityName: String
-        let APIKey = Constants.APIKey
-
-        enum CodingKeys: String, CodingKey {
-            case cityName = "q"
-            case APIKey = "appid"
-        }
-    }
-    
     static func getCurrentWeather(in city: String,
                                   success: @escaping (CurrentWeatherData) -> Void,
                                   failure: @escaping (RequestError) -> Void) {
         
-        guard let url = URL(string: Constants.Path.current.rawValue.APIBaseUrl()) else { return }
-        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = Constants.urlScheme
+        urlComponents.host = Constants.urlHost
+        urlComponents.path = Constants.Path.current.rawValue
+        urlComponents.queryItems = [URLQueryItem(name: Constants.appID, value: Constants.APIKey)]
+        urlComponents.queryItems?.append(URLQueryItem(name: Constants.query, value: city))
+        urlComponents.queryItems?.append(URLQueryItem(name: Constants.units, value: Units.metric.rawValue))
+        guard let url = urlComponents.url else { return }
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
         urlRequest.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"]
         urlRequest.httpMethod = HTTPMethod.get.rawValue
-        
-        do {
-            let jsonBody = try JSONEncoder().encode(Query(cityName: city))
-            urlRequest.httpBody = jsonBody
-        } catch {}
 
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
