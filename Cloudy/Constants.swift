@@ -11,6 +11,7 @@ import UIKit
 
 struct Constants {
     
+    static let dateFormat = "yyyy-MM-dd' 'HH:mm"
     struct Colors {
         static let Orange = UIColor(red: 222, green: 128, blue: 99, alpha: 1.0)
         static let Gray = UIColor(red: 90, green: 90, blue: 90, alpha: 1.0)
@@ -25,6 +26,26 @@ struct Constants {
         case forecastVC = "ForecastViewController"
     }
     
+    enum WindDirection: String {
+        case NNE = "North-Northeast"
+        case NE = "Northeast"
+        case ENE = "East-Northeast"
+        case E = "East"
+        case ESE = "East-Southeast"
+        case SE = "Southeast"
+        case SSE = "South-Southeast"
+        case S = "South"
+        case SSW = "South-Southwest"
+        case SW = "Southwest"
+        case WSW = "West-Southwest"
+        case W = "West"
+        case WNW = "West-Northwest"
+        case NW = "Northwest"
+        case NNW = "North-Northwest"
+        case N = "North"
+    }
+    
+
     //MARK: - Networking
     static let APIKey = "f05519111df4ee763f1c0e3cf501f728"
     static let urlScheme = "https"

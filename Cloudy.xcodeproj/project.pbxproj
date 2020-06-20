@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E16B5EF249E33E0000E141E /* PlacesCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E16B5EE249E33E0000E141E /* PlacesCollectionViewFlowLayout.swift */; };
 		3EBB6ECF249657410009B274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6ECE249657410009B274 /* AppDelegate.swift */; };
 		3EBB6ED1249657410009B274 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6ED0249657410009B274 /* SceneDelegate.swift */; };
 		3EBB6ED3249657410009B274 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB6ED2249657410009B274 /* MasterViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E16B5EE249E33E0000E141E /* PlacesCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		3EBB6ECB249657410009B274 /* Cloudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBB6ECE249657410009B274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EBB6ED0249657410009B274 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				3EBB6ED7249657410009B274 /* Cloudy.xcdatamodeld */,
 				3EBB6EEA249665B20009B274 /* Constants.swift */,
 				3EF5034C2498098300E29C18 /* Network.swift */,
+				3E16B5EE249E33E0000E141E /* PlacesCollectionViewFlowLayout.swift */,
 			);
 			path = Cloudy;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EBB6EF0249697DF0009B274 /* PlacesCollectionViewCell.swift in Sources */,
+				3E16B5EF249E33E0000E141E /* PlacesCollectionViewFlowLayout.swift in Sources */,
 				3EBB6ED3249657410009B274 /* MasterViewController.swift in Sources */,
 				3EF5034D2498098300E29C18 /* Network.swift in Sources */,
 				3EBB6ECF249657410009B274 /* AppDelegate.swift in Sources */,

@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
-private let reuseIdentifier = "Cell"
+class PlacesViewController: UIViewController {
 
-class PlacesViewController: UICollectionViewController {
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    var places = PublishSubject<[CurrentWeatherData]>()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +22,38 @@ class PlacesViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         //register 'PlacesCollectionViewCell' to UICollectionView
         collectionView.register(UINib(nibName: "PlacesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: String(describing: PlacesCollectionViewCell.self))
-        // Do any additional setup after loading the view.
+        configureBindings()
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
+        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = collectionView.backgroundColor!.withAlphaComponent(0.1)
+        collectionView.delegate = self
+    }
+    
+    private func configureBindings() {
+        places.bind(to: collectionView.rx.items(cellIdentifier: "PlacesCollectionViewCell", cellType: PlacesCollectionViewCell.self)) { [weak self] (row,weather,cell) in
+            cell.currentWeather = weather
+            if let country = weather.sys.country {
+                self?.parent?.navigationItem.title = weather.name + ", " + country
+            } else {
+                self?.parent?.navigationItem.title = weather.name
+            }
+//            cell.withBackView = true
+            }.disposed(by: disposeBag)
+        
+        collectionView.rx.willDisplayCell
+            .subscribe(onNext: ({ (cell,indexPath) in
+                cell.alpha = 0
+                let transform = CATransform3DTranslate(CATransform3DIdentity, 0, -250, 0)
+                cell.layer.transform = transform
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    cell.alpha = 1
+                    cell.layer.transform = CATransform3DIdentity
+                }, completion: nil)
+            })).disposed(by: disposeBag)
     }
 
     /*
@@ -37,7 +67,7 @@ class PlacesViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
-
+/*
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -56,7 +86,7 @@ class PlacesViewController: UICollectionViewController {
     
         return cell
     }
-
+*/
     // MARK: UICollectionViewDelegate
 
     /*
@@ -88,4 +118,15 @@ class PlacesViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension PlacesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
 }

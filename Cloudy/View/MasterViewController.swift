@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MasterViewController: UIViewController {
 
@@ -28,11 +29,24 @@ class MasterViewController: UIViewController {
         return vc
     }()
     
+    var viewModel = ViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configureBindings()
+        viewModel.getWeather()
     }
 
+    private func configureBindings() {
+        // binding place to places container
+        
+        viewModel
+            .currentWeather
+            .observeOn(MainScheduler.instance)
+            .bind(to: placesVC.places)
+            .disposed(by: disposeBag)
+    }
 }
 
 extension UIViewController {

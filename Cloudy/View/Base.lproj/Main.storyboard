@@ -18,23 +18,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="4wx-3W-U7z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VQx-9L-n1g">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VQx-9L-n1g">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-yP-rRx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <connections>
-                                            <segue destination="S0Z-Cg-H6p" kind="embed" id="kTG-aj-pdB"/>
+                                            <segue destination="bnu-Ai-SLc" kind="embed" id="LZF-LM-Oc7"/>
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xo-29-lzx">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="23"/>
+                                        <rect key="frame" x="0.0" y="208" width="375" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-8D-bDH">
-                                        <rect key="frame" x="0.0" y="223" width="375" height="400"/>
+                                        <rect key="frame" x="0.0" y="256" width="375" height="367"/>
                                         <connections>
                                             <segue destination="Tnc-rH-L4d" kind="embed" id="f62-Oy-C91"/>
                                         </connections>
@@ -51,7 +51,7 @@
                             <constraint firstItem="VQx-9L-n1g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VJn-vf-pJa"/>
                             <constraint firstItem="VQx-9L-n1g" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fDI-H2-e7W"/>
                             <constraint firstItem="VQx-9L-n1g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gg4-5K-f9H"/>
-                            <constraint firstItem="5qB-8D-bDH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="peb-JZ-w0H"/>
+                            <constraint firstItem="5qB-8D-bDH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.55" id="peb-JZ-w0H"/>
                             <constraint firstItem="Eeh-yP-rRx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="wEO-IJ-VDm"/>
                             <constraint firstItem="4wx-3W-U7z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zP5-AI-ieR"/>
                             <constraint firstAttribute="top" secondItem="4wx-3W-U7z" secondAttribute="top" id="zaF-lc-rhb"/>
@@ -70,36 +70,43 @@
             <point key="canvasLocation" x="1077.5999999999999" y="129.98500749625188"/>
         </scene>
         <!--Places View Controller-->
-        <scene sceneID="e3v-6b-whY">
+        <scene sceneID="7Fa-lb-33l">
             <objects>
-                <collectionViewController id="S0Z-Cg-H6p" customClass="PlacesViewController" customModule="Cloudy" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uh3-W8-7Ob">
+                <viewController storyboardIdentifier="PlacesViewController" id="bnu-Ai-SLc" customClass="PlacesViewController" customModule="Cloudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BI3-uT-pfH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3ta-8u-pFc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="km6-d3-8vO" customClass="PlacesCollectionViewFlowLayout" customModule="Cloudy" customModuleProvider="target"/>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UBC-8n-Q4v">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="S0Z-Cg-H6p" id="gTh-wO-b5D"/>
-                            <outlet property="delegate" destination="S0Z-Cg-H6p" id="i4y-2A-YMu"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ir-uR-qmd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="TLA-Kv-ZRk" firstAttribute="bottom" secondItem="3ta-8u-pFc" secondAttribute="bottom" id="6lV-W2-cym"/>
+                            <constraint firstItem="3ta-8u-pFc" firstAttribute="top" secondItem="TLA-Kv-ZRk" secondAttribute="top" id="Dig-dc-ATJ"/>
+                            <constraint firstItem="TLA-Kv-ZRk" firstAttribute="trailing" secondItem="3ta-8u-pFc" secondAttribute="trailing" id="HJ8-bg-cw9"/>
+                            <constraint firstItem="3ta-8u-pFc" firstAttribute="leading" secondItem="TLA-Kv-ZRk" secondAttribute="leading" id="wmx-Az-QhL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TLA-Kv-ZRk"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="3ta-8u-pFc" id="qib-cW-B5i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jde-py-Odn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986" y="-80"/>
+            <point key="canvasLocation" x="1985" y="-80"/>
         </scene>
         <!--Forecast View Controller-->
         <scene sceneID="Vf9-Mb-Wtb">
             <objects>
                 <tableViewController id="Tnc-rH-L4d" customClass="ForecastViewController" customModule="Cloudy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L7A-Xs-9uO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -110,7 +117,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92P-Ss-SIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1985" y="250"/>
+            <point key="canvasLocation" x="1985" y="265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cNO-BL-G7d">
